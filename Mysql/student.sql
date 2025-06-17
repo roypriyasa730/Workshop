@@ -38,3 +38,5 @@ VALUES
   (8, 'Aarohi', 'Roy', '1993-08-08','aarohiroy@gmail.com', '505 Walnut St', 'Springfield', 'IL', 62708, '555-0123'),
   (9, 'Sonali', 'Roy', '1992-09-09','sonaliroy@gmail.com', '606 Chestnut St', 'Springfield', 'IL', 62709, '555-4567');
 
+-- Show all data in the students table
+SELECT * FROM students;

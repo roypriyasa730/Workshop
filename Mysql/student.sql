@@ -43,3 +43,11 @@ SELECT * FROM students;
 
 -- Show the structure of the students table
 DESCRIBE students;
+
+-- Show the first name and last name of all students
+SELECT first_name, last_name FROM students;
+
+--Update a Student's Gmail
+update students
+set gmail = 'papanroy6@gmail.com'
+where id = 6;

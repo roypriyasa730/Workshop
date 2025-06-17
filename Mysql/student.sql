@@ -40,3 +40,6 @@ VALUES
 
 -- Show all data in the students table
 SELECT * FROM students;
+
+-- Show the structure of the students table
+SHOW COLUMNS FROM students;

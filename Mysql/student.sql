@@ -42,4 +42,4 @@ VALUES
 SELECT * FROM students;
 
 -- Show the structure of the students table
-SHOW COLUMNS FROM students;
+DESCRIBE students;

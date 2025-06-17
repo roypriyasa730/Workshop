@@ -21,3 +21,6 @@ CREATE TABLE students (
 
 -- Show tables in the database
 show tables;
+
+-- Describe the structure of the students table
+describe students;

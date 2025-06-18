@@ -51,3 +51,11 @@ SELECT first_name, last_name FROM students;
 update students
 set gmail = 'papanroy6@gmail.com'
 where id = 6;
+
+--add a new column for the student's age
+ALTER TABLE students
+ADD age INT;
+
+-- Update the age of each student based on their date of birth
+UPDATE students
+SET age = YEAR(CURDATE()) - YEAR(dob) - (DATE_FORMAT(CURDATE(), '%m%d') < DATE_FORMAT(dob, '%m%d'));

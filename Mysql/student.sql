@@ -78,3 +78,4 @@ WHERE id = 1;
  -- create a new table for student grades
 
 CREATE DATABASE student_grades;
+USE student_grades;

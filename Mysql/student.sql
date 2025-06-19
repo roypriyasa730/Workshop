@@ -71,4 +71,7 @@ WHERE id = 9;
 SELECT * FROM students; 
 
 
---
+-- AGEUPDATE students
+UPDATE students
+SET age = 30
+WHERE id = 1;

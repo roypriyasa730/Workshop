@@ -79,3 +79,38 @@ WHERE id = 1;
 
 CREATE DATABASE student_grades;
 USE student_grades;
+
+-- Create a new table for student grades
+CREATE TABLE student_grades (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    student_name VARCHAR(100),
+    subject VARCHAR(100),
+    grade CHAR(2)
+);
+
+-- Insert sample data into the student_grades table
+INSERT INTO student_grades (student_name, subject, grade)
+VALUES
+    ('Thamma Roy', 'Math', 'A'),
+    ('Amar Roy', 'Science', 'B'),
+    ('Santana Roy', 'History', 'C'),
+    ('Apu Roy', 'English', 'B'),
+    ('Tapu Roy', 'Geography', 'A'),
+    ('Papan Roy', 'Physics', 'C'),
+    ('Priyasa Roy', 'Chemistry', 'B'),
+    ('Aarohi Roy', 'Biology', 'A');
+
+    --join the students table with the student_grades table
+SELECT 
+  s.id,
+  s.first_name,
+  s.last_name,
+  g.subject,
+  g.grade
+FROM 
+  students s
+JOIN 
+  student_grades g
+ON 
+  CONCAT(s.first_name, ' ', s.last_name) = g.student_name;
+ 

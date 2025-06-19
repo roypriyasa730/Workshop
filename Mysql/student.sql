@@ -75,3 +75,6 @@ SELECT * FROM students;
 UPDATE students
 SET age = 30
 WHERE id = 1;
+ -- create a new table for student grades
+
+CREATE DATABASE student_grades;

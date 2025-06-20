@@ -34,7 +34,7 @@ VALUES
   (4, 'Apu', 'Roy', '1997-04-04','apuroy4@gmail.com', '101 Pine St', 'Springfield', 'IL', 62704, '555-3456'),
   (5, 'Tapu', 'Roy', '1996-05-05','tapuroy5@gmail.com','202 Maple St', 'Springfield', 'IL', 62705, '555-7890'),
   (6, 'Papan', 'Roy', '1995-06-06','papanroy@gmail.com', '303 Cedar St', 'Springfield', 'IL', 62706, '555-2345'),
-  (7, 'Priyasa', 'Roy', '1994-07-07', 'priyasaroy7@gmail.com', '404 Birch St', 'Springfield', 'IL', 62707, '555-6789'),
+  (7, 'Priyasa', 'Roy', '1994-07-07', 'amarroy2@gmail.com', '404 Birch St', 'Springfield', 'IL', 62707, '555-6789'),
   (8, 'Aarohi', 'Roy', '1993-08-08','aarohiroy@gmail.com', '505 Walnut St', 'Springfield', 'IL', 62708, '555-0123'),
   (9, 'Sonali', 'Roy', '1992-09-09','sonaliroy@gmail.com', '606 Chestnut St', 'Springfield', 'IL', 62709, '555-4567');
 
@@ -113,4 +113,8 @@ JOIN
   student_grades g
 ON 
   CONCAT(s.first_name, ' ', s.last_name) = g.student_name;
- 
+
+SELECT email
+FROM students
+GROUP BY email
+HAVING COUNT(*) > 1;

@@ -114,7 +114,10 @@ JOIN
 ON 
   CONCAT(s.first_name, ' ', s.last_name) = g.student_name;
 
+-- Find students with duplicate email addresses
 SELECT email
 FROM students
 GROUP BY email
 HAVING COUNT(*) > 1;
+
+

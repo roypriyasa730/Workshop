@@ -134,3 +134,12 @@ INNER JOIN
     student_grades sg
 ON 
     CONCAT(s.first_name, ' ', s.last_name) = sg.student_name;
+
+--left join to find all students and their grades
+SELECT *
+FROM 
+    students s
+LEFT JOIN 
+    student_grades.student_grades sg
+ON 
+(s.first_name, ' ', s.last_name) = sg.student_name;

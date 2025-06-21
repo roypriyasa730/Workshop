@@ -142,4 +142,4 @@ FROM
 LEFT JOIN 
     student_grades.student_grades sg
 ON 
-(s.first_name, ' ', s.last_name) = sg.student_name;
+    CONCAT(s.first_name, ' ', s.last_name) = sg.student_name;

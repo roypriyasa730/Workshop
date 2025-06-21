@@ -120,4 +120,17 @@ FROM students
 GROUP BY email
 HAVING COUNT(*) > 1;
 
-
+--inner join to find students with grades
+SELECT 
+    s.id,
+    CONCAT(s.first_name, ' ', s.last_name) AS full_name,
+    s.gmail,
+    s.city,
+    sg.subject,
+    sg.grade
+FROM 
+    students s
+INNER JOIN 
+    student_grades sg
+ON 
+    CONCAT(s.first_name, ' ', s.last_name) = sg.student_name;

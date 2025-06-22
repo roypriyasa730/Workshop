@@ -144,7 +144,7 @@ LEFT JOIN
 ON 
     CONCAT(s.first_name, ' ', s.last_name) = sg.student_name;
 
--- Write your MySQL query statement below
+-- include query to find employees with more than four direct reports
 select name from Employee where id in
 (select managerId from Employee 
 

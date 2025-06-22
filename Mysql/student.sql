@@ -151,3 +151,9 @@ select name from Employee where id in
 where managerId is not null 
 group by managerId having count(*) > 4)
 
+
+-- Write your MySQL query statement below
+select s.name from SalesPerson s
+left join orders o on o.sales_id = s.sales_id
+where o.com_id in (select com_id from Company where name = 'RED')
+

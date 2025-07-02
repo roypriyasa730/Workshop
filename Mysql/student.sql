@@ -157,3 +157,15 @@ select s.name from SalesPerson s
 left join orders o on o.sales_id = s.sales_id
 where o.com_id in (select com_id from Company where name = 'RED')
 
+-- Find the IDs of weather records where the temperature is higher than the previous day's temperature
+select w1.id
+from Weather w1 
+join Weather w2
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+where w1.temperature > w2.temperature;
+
+-- Find the first login date for each player
+Select player_id ,
+min(event_date) as first_login
+from Activity
+group by player_id

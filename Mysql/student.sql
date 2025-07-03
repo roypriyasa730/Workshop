@@ -169,3 +169,8 @@ Select player_id ,
 min(event_date) as first_login
 from Activity
 group by player_id
+
+-- Find the classes with at least 5 students
+select class from Courses
+group by class 
+having count(student) >= 5;

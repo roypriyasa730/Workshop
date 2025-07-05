@@ -174,3 +174,16 @@ group by player_id
 select class from Courses
 group by class 
 having count(student) >= 5;
+
+
+select e.name, b.bouns
+from Employee on e.id = b.id
+where b.id > 1000;
+
+
+-- This query retrieves the customer number that has placed the highest number of orders.
+SELECT customer_number
+FROM Orders
+GROUP BY customer_number
+order by count(*) desc
+limit 1

@@ -176,9 +176,9 @@ group by class
 having count(student) >= 5;
 
 
-select e.name, b.bouns
+/*select e.name, b.bouns
 from Employee on e.id = b.id
-where b.id > 1000;
+where b.id > 1000;*/
 
 
 -- This query retrieves the customer number that has placed the highest number of orders.

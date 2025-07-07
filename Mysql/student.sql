@@ -187,3 +187,9 @@ FROM Orders
 GROUP BY customer_number
 order by count(*) desc
 limit 1
+
+
+-- This query retrieves the user IDs and the count of followers for each user, ordered by user ID in ascending order.
+SELECT user_id, COUNT(follower_id) AS Followers_count
+FROM Followers
+GROUP BY user_id ORDER BY user_id ASC;

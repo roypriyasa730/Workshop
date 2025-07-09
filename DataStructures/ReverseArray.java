@@ -16,7 +16,7 @@ public class ReverseArray {
 
     // Main method to test the reverse function
     public static void main(String[] args) {
-        int[] arr = {1, 4, 3, 2}; 
+        int[] arr = { 1, 4, 3, 2 };
 
         reverse(arr);
 

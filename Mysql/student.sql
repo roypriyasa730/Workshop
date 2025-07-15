@@ -198,4 +198,12 @@ GROUP BY user_id ORDER BY user_id ASC;
 --find the users with email addresses ending with '@leetcode.com'
 SELECT *
 FROM Users
-WHERE  REGEXP_LIKE(mail,'^[a-zA-Z][a-zA-Z0-9._-]*@leetcode[.]com$','c');
+WHERE  REGEXP_LIKE(mail,'^[a-zA-Z][a-zA-Z0-9._-]*@leetcode[.]com$','c'); 
+
+
+--gourbp by sell_date and count distinct products sold, concatenating product names
+select sell_date,
+ count(distinct product) as num_sold, 
+ group_concat(distinct product order by product separator ',') as products
+  from Activities
+   group by sell_date order by sell_date;

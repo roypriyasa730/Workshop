@@ -207,3 +207,8 @@ select sell_date,
  group_concat(distinct product order by product separator ',') as products
   from Activities
    group by sell_date order by sell_date;
+
+-- Find the product IDs of products that are both low fat and recyclable
+SELECT product_id
+FROM Products
+WHERE low_fats = 'Y' AND recyclable = 'Y';

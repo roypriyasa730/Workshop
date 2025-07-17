@@ -212,3 +212,10 @@ select sell_date,
 SELECT product_id
 FROM Products
 WHERE low_fats = 'Y' AND recyclable = 'Y';
+
+--find invalid tweets 15
+
+SELECT tweet_id 
+FROM Tweets
+WHERE LENGTH(content) > 15;
+

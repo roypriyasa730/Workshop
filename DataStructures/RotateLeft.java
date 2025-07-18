@@ -11,10 +11,13 @@ public class RotateLeft {
         System.out.println();
 
         for (int i = 0; i < d; i++) {
+            int frist = n[0];
 
             for (int j = 0; j < n.length - 1; j++) {
                 n[j] = n[j + 1]; // Shift elements to the left
             }
+
+            n[n.length - 1] = frist;
 
         }
         System.out.println("Array after rotation: ");

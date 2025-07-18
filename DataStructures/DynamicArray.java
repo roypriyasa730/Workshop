@@ -1,10 +1,22 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class DynamicArray {
     public static void main(String[] args) {
-        // Declare and initialize a dynamic array
-        int[][] dynamicArray = new int[3][];
-        dynamicArray[0] = new int[] { 1, 2, 3 };
-        dynamicArray[1] = new int[] { 4, 5 };
-        dynamicArray[2] = new int[] { 6, 7, 8, 9 };
+
+        List<List<Integer>> queries = new ArrayList<>();
+
+        queries.add(List.of(1, 0, 5));
+        queries.add(List.of(1, 1, 7));
+        queries.add(List.of(1, 0, 3));
+        queries.add(List.of(2, 1, 0));
+        queries.add(List.of(2, 1, 1));
+        int n = 2;
+        List<List<Integer>> array = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            array.add(new ArrayList<>());
+
+        }
 
     }
 

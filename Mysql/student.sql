@@ -232,3 +232,8 @@ ORDER BY s.student_id, u.subject_name;
 SELECT name, population, area
 FROM World
 WHERE area >= 3000000 or population >=25000000;
+
+-- This query retrieves the user IDs and the count of followers for each user, ordered by user ID in ascending order.
+SELECT user_id, COUNT(follower_id) AS Followers_count
+FROM Followers
+GROUP BY user_id ORDER BY user_id ASC;

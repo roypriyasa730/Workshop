@@ -237,3 +237,13 @@ WHERE area >= 3000000 or population >=25000000;
 SELECT user_id, COUNT(follower_id) AS Followers_count
 FROM Followers
 GROUP BY user_id ORDER BY user_id ASC;
+
+
+--combine person and address tables using LEFT JOIN
+SELECT 
+p.firstName,
+p.lastName,
+a.city,
+a.state
+FROM person p
+LEFT JOIN address a ON p.personId  = a.personId    

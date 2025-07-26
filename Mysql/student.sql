@@ -246,4 +246,12 @@ p.lastName,
 a.city,
 a.state
 FROM person p
-LEFT JOIN address a ON p.personId  = a.personId    
+LEFT JOIN address a ON p.personId  = a.personId   
+
+
+-- Find the confirmation rate for each user
+SELECT s.user_id , ROUND(if(COUNT(*) > 0, 1, 0), 2) AS  confirmation_rate
+FROM Signups s
+LEFT JOIN Confirmations c ON s.user_id = c.user_id
+GROUP BY s.user_id;
+

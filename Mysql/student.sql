@@ -255,3 +255,7 @@ FROM Signups s
 LEFT JOIN Confirmations c ON s.user_id = c.user_id
 GROUP BY s.user_id;
 
+-- Find the names of customers who have not placed any orders
+select c.name as Customers from Customers c
+where c.id not in (select customerId from Orders)
+

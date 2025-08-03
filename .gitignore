@@ -1,5 +1,7 @@
 .vscode/extensions.json
 .vscode/settings.json
-DataStructures/.DS_Store
-HTML/.DS_Store
-.DS_Store
+Java/demo.iml
+.gitignore
+Java/.idea/modules.xml
+Java/.idea/misc.xml
+**/.DS_Store

@@ -259,3 +259,10 @@ GROUP BY s.user_id;
 select c.name as Customers from Customers c
 where c.id not in (select customerId from Orders)
 
+
+-- Find the unique IDs of employees and their names using a LEFT JOIN
+
+SELECT EmployeeUNI.unique_id, Employees.name  
+FROM Employees 
+LEFT JOIN  EmployeeUNI 
+ON Employees.id= EmployeeUNI.id

@@ -266,3 +266,8 @@ SELECT EmployeeUNI.unique_id, Employees.name
 FROM Employees 
 LEFT JOIN  EmployeeUNI 
 ON Employees.id= EmployeeUNI.id
+
+-- Find the maximum number from the MyNumbers table that is unique (appears only once)
+
+SELECT MAX(num) AS num 
+FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num)=1) a;

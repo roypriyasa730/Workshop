@@ -273,6 +273,7 @@ SELECT MAX(num) AS num
 FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num)=1) a;
 
 
+-- Calculate the average rating and the percentage of poor queries for each query name
 SELECT query_name,
 	ROUND(AVG(rating / position), 2) AS quality,
 	ROUND(AVG(rating < 3) * 100, 2) AS poor_query_percentage 

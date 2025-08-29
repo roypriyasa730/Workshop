@@ -271,3 +271,10 @@ ON Employees.id= EmployeeUNI.id
 
 SELECT MAX(num) AS num 
 FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num)=1) a;
+
+
+SELECT query_name,
+	ROUND(AVG(rating / position), 2) AS quality,
+	ROUND(AVG(rating < 3) * 100, 2) AS poor_query_percentage 
+FROM Queries
+GROUP BY query_name;

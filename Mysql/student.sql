@@ -285,3 +285,10 @@ SELECT p.name
 FROM Patients p
 JOIN Conditions c ON p.id = c.patient_id
 WHERE c.condition = 'diabetes';
+
+-- Find employees who do not have a manager and earn less than 30000
+
+select employee_id from Employees
+where manager_id not in (select employee_id from Employees) 
+and salary < 30000
+order by employee_id

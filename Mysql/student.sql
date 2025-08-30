@@ -279,3 +279,9 @@ SELECT query_name,
 	ROUND(AVG(rating < 3) * 100, 2) AS poor_query_percentage 
 FROM Queries
 GROUP BY query_name;
+
+-- Find patients with a condition
+SELECT p.name
+FROM Patients p
+JOIN Conditions c ON p.id = c.patient_id
+WHERE c.condition = 'diabetes';

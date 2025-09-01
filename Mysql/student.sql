@@ -292,3 +292,11 @@ select employee_id from Employees
 where manager_id not in (select employee_id from Employees) 
 and salary < 30000
 order by employee_id
+
+
+-- Find the IDs of weather records where the temperature is higher than the previous day's temperature  
+select w1.id
+from Weather w1 
+join Weather w2
+ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
+where w1.temperature > w2.temperature;

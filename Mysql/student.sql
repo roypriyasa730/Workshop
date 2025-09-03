@@ -300,3 +300,10 @@ from Weather w1
 join Weather w2
 ON DATEDIFF(w1.recordDate, w2.recordDate) = 1
 where w1.temperature > w2.temperature;
+
+-- Create Cinema table
+
+SELECT id,movie,description,rating
+FROM Cinema
+WHERE description NOT IN ('boring')  AND id %2 !=0 
+ORDER BY rating DESC;

@@ -307,3 +307,14 @@ SELECT id,movie,description,rating
 FROM Cinema
 WHERE description NOT IN ('boring')  AND id %2 !=0 
 ORDER BY rating DESC;
+
+-- Find employees who are either the only employee in their department or are marked as primary
+select distinct employee_id, department_id
+from employee
+where employee_id in (
+    select employee_id
+    from employee
+    group by employee_id
+    having count(*) = 1
+) or primary_flag= 'Y'
+ORDER BY employee_id

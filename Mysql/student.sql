@@ -318,3 +318,10 @@ where employee_id in (
     having count(*) = 1
 ) or primary_flag= 'Y'
 ORDER BY employee_id
+
+
+--610. Triangle Judgement
+SELECT  x, y, z, CASE WHEN x + y > z AND x + z > y AND y + z > x 
+THEN 'Yes' 
+ELSE 'No' END AS triangle
+FROM Triangle;

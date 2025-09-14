@@ -336,3 +336,11 @@ FROM Employees e
 JOIN Employees m  ON e.reports_to = m.employee_id
 GROUP BY m.employee_id, m.name
 ORDER BY m.employee_id;
+
+-- Find the percentage of users registered for each contest
+
+SELECT contest_id,
+ROUND(COUNT(user_id)*100/(select count(*)from Users),2) as percentage
+from Register
+group by contest_id
+order by percentage desc, contest_id asc

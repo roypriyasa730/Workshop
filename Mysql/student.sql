@@ -350,3 +350,8 @@ order by percentage desc, contest_id asc
 SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
 WHERE salary < (SELECT MAX(salary) FROM Employee);
+
+--196. Delete Duplicate Emails
+delete p1 from Person p1 
+join Person p2 on p1.email=p2.email
+where p1.id>p2.id;

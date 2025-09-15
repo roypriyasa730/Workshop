@@ -344,3 +344,9 @@ ROUND(COUNT(user_id)*100/(select count(*)from Users),2) as percentage
 from Register
 group by contest_id
 order by percentage desc, contest_id asc
+
+
+-- Find the second highest salary from the Employee table
+SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary < (SELECT MAX(salary) FROM Employee);

@@ -372,3 +372,10 @@ SELECT s.user_id,
 FROM Signups s
 LEFT JOIN Confirmations c  ON s.user_id = c.user_id
 GROUP BY s.user_id;
+
+-- Find viewers who have viewed their own videos
+SELECT author_id AS id
+FROM Views
+WHERE author_id = viewer_id
+GROUP BY author_id
+ORDER BY id asc;

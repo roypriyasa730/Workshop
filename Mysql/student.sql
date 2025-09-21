@@ -379,3 +379,10 @@ FROM Views
 WHERE author_id = viewer_id
 GROUP BY author_id
 ORDER BY id asc;
+
+-- Calculate the average rating and the percentage of poor queries for each query name
+SELECT query_name,
+	ROUND(AVG(rating / position), 2) AS quality,
+	ROUND(AVG(rating < 3) * 100, 2) AS poor_query_percentage 
+FROM Queries
+GROUP BY query_name;

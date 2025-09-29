@@ -393,3 +393,13 @@ SELECT id,movie,description,rating
 FROM Cinema
 WHERE description NOT IN ('boring')  AND id %2 !=0 
 ORDER BY rating DESC;
+
+
+
+-- Find products with at least 100 units sold in February 2020
+select product_name, sum(unit) as unit 
+from Orders 
+left join Products on Orders.product_id = Products.product_id
+where order_date >= '2020-02-01' and order_date<='2020-02-29'
+group by Orders.product_id
+ having sum(unit) >= 100

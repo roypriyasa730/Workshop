@@ -410,3 +410,11 @@ group by Orders.product_id
 FROM Patients p
 JOIN Conditions c ON p.id = c.patient_id
 WHERE c.condition = 'diabetes';
+
+
+-- Find the IDs of weather records where the temperature is higher than the previous day's temperature
+SELECT today.id
+FROM Weather yesterday 
+CROSS JOIN Weather today
+WHERE DATEDIFF(today.recordDate, yesterday.recordDate) = 1
+    AND today.temperature > yesterday.temperature

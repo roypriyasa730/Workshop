@@ -418,3 +418,8 @@ FROM Weather yesterday
 CROSS JOIN Weather today
 WHERE DATEDIFF(today.recordDate, yesterday.recordDate) = 1
     AND today.temperature > yesterday.temperature
+
+-- Find the maximum number from the MyNumbers table that is unique (appears only once)
+
+    SELECT MAX(num) AS num 
+FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num)=1) a;

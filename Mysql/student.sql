@@ -423,8 +423,17 @@ WHERE DATEDIFF(today.recordDate, yesterday.recordDate) = 1
 
     SELECT MAX(num) AS num 
 FROM (SELECT num FROM MyNumbers GROUP BY num HAVING COUNT(num)=1) a;
+
 -- Find the number of active users for each day in the last 30 days
 SELECT activity_date AS day, COUNT(DISTINCT user_id) AS active_users
 FROM Activity
 WHERE activity_date BETWEEN '2019-06-28' AND '2019-07-27'
 GROUP BY activity_date;
+
+-- 1251. Average Selling Price
+SELECT p.product_id,
+IFNULL(ROUND(SUM(p.price * u.units) / SUM(u.units), 2), 0) AS average_price
+FROM Prices p
+LEFT JOIN UnitsSold u ON p.product_id = u.product_id
+AND u.purchase_date BETWEEN p.start_date AND p.end_date
+GROUP BY p.product_id;

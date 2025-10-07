@@ -440,7 +440,17 @@ GROUP BY p.product_id;
 
 -- Find the names of customers who have not placed any orders
 select c.name as Customers from Customers c
-where c.id not in (select customerId from Orders)       
+where c.id not in (select customerId from Orders) 
+
+-- Find the first sale year for each product along with its quantity and price
+SELECT s.product_id, s.year AS first_year, s.quantity, s.price
+FROM Sales s
+JOIN (SELECT product_id, MIN(year) AS first_year
+FROM Sales
+GROUP BY product_id
+) AS first_sales
+ON s.product_id = first_sales.product_id 
+AND s.year = first_sales.first_year;
 
 
 

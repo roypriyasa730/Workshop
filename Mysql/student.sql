@@ -452,5 +452,23 @@ GROUP BY product_id
 ON s.product_id = first_sales.product_id 
 AND s.year = first_sales.first_year;
 
+-- Remove Element
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        
+        int k=0;
+        for(int i=0;i<nums.length;i++){
+            if( nums[i]!=val){
+              nums[k]=nums[i];
+               k++;
+            }
+           continue ;
+        }
+       
+       return k ;
+
+    }
+}
+
 
 

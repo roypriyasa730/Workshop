@@ -475,3 +475,9 @@ where manager_id not in (select employee_id from Employees)
 and salary < 30000
 order by employee_id
 
+-- Find employees who manage more than four employees
+select name from Employee where id in
+(select managerId from Employee 
+
+where managerId is not null 
+group by managerId having count(*) > 4)

@@ -504,3 +504,10 @@ SELECT ROUND(COUNT(*) / (SELECT COUNT(DISTINCT player_id) FROM Activity), 2) AS 
 FROM Activity a1
 JOIN t1 t ON a1.player_id = t.player_id 
 AND a1.event_date = DATE_ADD(t.first_login_date , INTERVAL 1 DAY);
+ --626. Exchange Seats
+SELECT CASE
+        WHEN MOD(id, 2) != 0 AND id = (SELECT MAX(id) FROM Seat) THEN id
+        WHEN MOD(id, 2) != 0 THEN id + 1
+        ELSE id - 1 END AS id, student
+FROM Seat
+ORDER BY id ASC;

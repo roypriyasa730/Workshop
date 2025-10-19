@@ -6,6 +6,8 @@ public class PrimeBasic {
 
         if (number <= 1) {
             isPrime = false;
+            System.out.println(number + " is NOT a Prime number.");
+
         } else {
             for (int i = 2; i < number; i++) {
                 if (number % i == 0) {

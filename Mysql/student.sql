@@ -528,3 +528,10 @@ FROM Visits v
 LEFT JOIN Transactions t ON v.visit_id = t.visit_id
 WHERE t.transaction_id IS NULL
 GROUP BY v.customer_id;
+
+--1045. Customers Who Bought All Products
+SELECT customer_id
+FROM Customer
+GROUP BY 1
+HAVING COUNT(DISTINCT product_key) = (
+SELECT COUNT(*) FROM Product);

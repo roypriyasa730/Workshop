@@ -535,3 +535,18 @@ FROM Customer
 GROUP BY 1
 HAVING COUNT(DISTINCT product_key) = (
 SELECT COUNT(*) FROM Product);
+
+-- Find the user with the most friends
+WITH
+  AllIds AS (
+    SELECT requester_id AS id FROM RequestAccepted
+    UNION ALL
+    SELECT accepter_id FROM RequestAccepted
+  )
+SELECT
+  id,
+  COUNT(*) AS num
+FROM AllIds
+GROUP BY 1
+ORDER BY 2 DESC
+LIMIT 1;

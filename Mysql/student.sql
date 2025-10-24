@@ -556,3 +556,13 @@ FROM Views
 WHERE author_id = viewer_id
 GROUP BY author_id
 ORDER BY id asc;
+-- Find the dates where the number of customers visiting the store in the last 7 days is at least 100
+WITH
+  Dates AS (
+    SELECT DISTINCT visited_on
+    FROM Customer
+    WHERE visited_on >= (
+      SELECT DATE_ADD(MIN(visited_on), INTERVAL 6 DAY)
+      FROM Customer
+    )
+  )

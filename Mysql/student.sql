@@ -550,3 +550,9 @@ FROM AllIds
 GROUP BY 1
 ORDER BY 2 DESC
 LIMIT 1;
+-- Find viewers who have viewed their own videos
+SELECT author_id AS id
+FROM Views
+WHERE author_id = viewer_id
+GROUP BY author_id
+ORDER BY id asc;

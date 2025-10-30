@@ -1,4 +1,4 @@
-public class sorting {
+class sorting {
     public int strStr(String haystack, String needle) {
         int m = haystack.length();
         int n = needle.length();

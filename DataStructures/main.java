@@ -8,9 +8,8 @@ public class main {
                 nums[k] = nums[i];
                 k++;
             }
-        
-        }
 
+        }
 
         // Output the result
         //

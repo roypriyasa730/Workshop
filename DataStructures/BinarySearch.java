@@ -8,6 +8,7 @@ public class BinarySearch {
 
             // Check if the target is present at mid
             if (arr[mid] == target) {
+                System.out.println("Element found at index: " + mid);
                 return mid;
             }
 
@@ -20,7 +21,14 @@ public class BinarySearch {
                 high = mid - 1;
             }
         }
+        System.out.println("Element not found in the array.");
 
         return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 2, 3, 4, 10, 40 };
+        int target = 10;
+        binarySearchIterative(arr, target);
     }
 }

@@ -2,11 +2,11 @@ public class lengthOfLastWord {
 
     public static void main(String[] args) {
         String s = "Hello World";
-        int length = lengthOfLastWord(s);
+        int length = lastWordLength(s);
         System.out.println("Length of last word: " + length);
     }
 
-    public static int lengthOfLastWord(String s) {
+    public static int lastWordLength(String s) {
         int length = 0;
         int i = s.length() - 1;
 

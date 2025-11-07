@@ -35,7 +35,7 @@ public class BinarySearch {
 
 // NextGreatestLetter.java
 // LeetCode Problem: Find Smallest Letter Greater Than Target
-class NextGreatestLetter {
+class NextGreatestLetterSolver {
 
     public char nextGreatestLetter(char[] letters, char target) {
         int left = 0;

@@ -5,5 +5,10 @@ public class WhileLoop {
             System.out.println("Hello World");
             i++;
         }
+        System.out.println("Loop complete!");
+
+        // Additional code can be added here
+
     }
+
 }

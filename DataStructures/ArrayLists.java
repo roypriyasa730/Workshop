@@ -46,6 +46,7 @@ public class ArrayLists {
         for (int i = 0; i < list.size(); i++) {
             sum += list.get(i);
             System.out.println("Sum of elements: " + sum);
+
         }
     }
 }

@@ -26,7 +26,7 @@ public class HourGlassMaxSum {
             System.out.println(sum);
         }
         // Find the maximum hourglass sum
-        int maxSum = 0;
+        int maxSum = Integer.MIN_VALUE;
         for (int sum : sumList) {
             if (sum > maxSum) {
                 maxSum = sum;

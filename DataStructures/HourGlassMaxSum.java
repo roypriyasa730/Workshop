@@ -20,6 +20,12 @@ public class HourGlassMaxSum {
                         + matrix.get(i + 1).get(j + 1) +
                         matrix.get(i + 2).get(j) + matrix.get(i + 2).get(j + 1) + matrix.get(i + 2).get(j + 2);
             }
+            for (int j = 0; j < 4; j++) {
+                // Calculate hourglass sum
+                sumList[index++] = matrix.get(i).get(j) + matrix.get(i).get(j + 1) + matrix.get(i).get(j + 2)
+                        + matrix.get(i + 1).get(j + 1) +
+                        matrix.get(i + 2).get(j) + matrix.get(i + 2).get(j + 1) + matrix.get(i + 2).get(j + 2);
+            }
         }
         // Print all sum values
         for (int sum : sumList) {

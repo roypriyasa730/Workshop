@@ -6,6 +6,7 @@ class Solution {
             return 0;
         }
 
+         
         Arrays.sort(nums);
 
         int i = 0;

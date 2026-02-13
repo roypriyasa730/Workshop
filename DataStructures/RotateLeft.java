@@ -19,6 +19,13 @@ public class RotateLeft {
 
             n[n.length - 1] = frist;
 
+            // Print the array after each rotation
+            System.out.print("Array after rotation " + (i + 1) + ": ");
+            for (int k = 0; k < n.length; k++) {
+                System.out.print(n[k] + " ");
+            }
+            System.out.println();
+
         }
         System.out.println("Array after rotation: ");
         for (int i = 0; i < n.length; i++) {

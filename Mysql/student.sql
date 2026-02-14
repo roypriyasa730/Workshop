@@ -608,3 +608,11 @@ WHERE
   StartActivity.activity_type = 'start'
   AND EndActivity.activity_type = 'end'
 GROUP BY 1;
+
+-- Find the names of customers who have not placed any orders
+SELECT
+  user_id,
+  CONCAT(UPPER(SUBSTRING(name, 1, 1)),LOWER(SUBSTRING(name, 2))) AS name
+FROM Users
+WHERE user_id NOT IN (SELECT DISTINCT user_id FROM Orders)
+ORDER BY 1;

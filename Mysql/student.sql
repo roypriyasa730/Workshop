@@ -616,3 +616,41 @@ SELECT
 FROM Users
 WHERE user_id NOT IN (SELECT DISTINCT user_id FROM Orders)
 ORDER BY 1;
+
+-- Find the percentage of users registered for each contest
+
+    public int[] searchRange(int[] nums, int target) {
+        
+     
+        int leftIndex = binarySearch(nums, target);
+        
+     
+        int rightIndex = binarySearch(nums, target + 1);
+        
+  
+        if (leftIndex == rightIndex) {
+            return new int[] {-1, -1};
+        }
+        
+
+        return new int[] {leftIndex, rightIndex - 1};
+    }
+
+   -- Helper function to perform binary search
+    private int binarySearch(int[] nums, int value) {
+        int left = 0;
+        int right = nums.length;
+
+        while (left < right) {
+            
+            int mid = (left + right) / 2;
+
+            if (nums[mid] >= value) {
+                right = mid;     
+            } else {
+                left = mid + 1;  
+            }
+        }
+
+        return left;
+    }

@@ -669,3 +669,11 @@ WHERE
   StartActivity.activity_type = 'start'
   AND EndActivity.activity_type = 'end'
 GROUP BY 1;
+
+SELECT
+  DATE_FORMAT(trans_date, '%Y-%m') AS month,
+  country,
+  COUNT(*) AS trans_count,
+  SUM(state = 'approved') AS approved_count,
+  SUM(amount) AS trans_total_amount,
+  

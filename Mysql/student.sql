@@ -678,5 +678,6 @@ SELECT
   SUM(amount) AS trans_total_amount,
   SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
 FROM Transactions
-GROUP BY 1, 2;
+GROUP BY 1, 2; 
+
   

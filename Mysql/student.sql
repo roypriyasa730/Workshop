@@ -679,5 +679,22 @@ SELECT
   SUM(IF(state = 'approved', amount, 0)) AS approved_total_amount
 FROM Transactions
 GROUP BY 1, 2; 
+-- Find the user with the most friends
+  class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0)
+            return "";
 
-  
+        String prefix = strs[0];
+
+        for (int i = 1; i < strs.length; i++) {
+         
+            while (strs[i].indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.isEmpty())
+                    return "";
+            }
+        }
+        return prefix;
+    }
+}
